@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 interface Person {
   firstName: string;
@@ -14,11 +14,14 @@ interface Props {
 }
 
 export const TextField: React.FC<Props> = () => {
-  const [count, setCount] = useState<number | null>(5);
+  const [count, setCount] = useState<number | null | { text: string }>(5);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // setCount({ text: 'hey' });
 
   return (
     <div>
-      <input />
+      <input ref={inputRef} />
     </div>
   );
 };
