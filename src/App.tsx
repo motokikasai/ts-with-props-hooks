@@ -6,7 +6,11 @@ import { TextField } from './TextField';
 const App: React.FC = () => {
   return (
     <div className='App'>
-      <TextField text='hello' person={{ firstName: '', lastName: '' }} />
+      <TextField
+        text='hello'
+        person={{ firstName: '', lastName: '' }}
+        handleChange={() => {}}
+      />
     </div>
   );
 };

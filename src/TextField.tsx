@@ -11,9 +11,10 @@ interface Props {
   age?: number;
   fn?: (bob: string) => void;
   person: Person;
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const TextField: React.FC<Props> = () => {
+export const TextField: React.FC<Props> = ({ handleChange }) => {
   const [count, setCount] = useState<number | null | { text: string }>(5);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -21,7 +22,7 @@ export const TextField: React.FC<Props> = () => {
 
   return (
     <div>
-      <input ref={inputRef} />
+      <input ref={inputRef} onChange={handleChange} />
     </div>
   );
 };
